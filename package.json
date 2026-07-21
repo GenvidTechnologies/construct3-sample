@@ -1,0 +1,14 @@
+{
+  "name": "construct3-sample",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Canonical Construct 3 sample project — golden fixture consumed by GenvidTechnologies C3 tooling",
+  "license": "MIT-0",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@genvidtech/c3source": "^1.7.0"
+  }
+}

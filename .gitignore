@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+
+# Editor-local state the C3 editor regenerates on open. These are intentionally
+# NOT part of the canonical fixture (C3 itself gitignores them on export), so a
+# manual editor-import validation pass must never commit them back in.
+**/*.uistate.json
