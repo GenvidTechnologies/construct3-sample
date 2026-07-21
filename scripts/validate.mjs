@@ -31,14 +31,22 @@ function parseJson(file) {
   return JSON.parse(raw);
 }
 
-/** Recursively collect every *.json file under `dir`. */
+/**
+ * `tsconfig.json` (and variants) is TypeScript tooling config that C3 ships in
+ * scripts/ for the project's .ts files — it is JSONC (comments + trailing commas
+ * allowed), NOT C3 project data, and C3 never parses it as strict JSON. Exclude
+ * it from the well-formedness check rather than mis-flag a valid export artifact.
+ */
+const JSONC_EXCEPTIONS = /^tsconfig(\..+)?\.json$/;
+
+/** Recursively collect every strict-JSON file under `dir` (C3 data + manifest). */
 function findJsonFiles(dir) {
   const out = [];
   for (const entry of readdirSync(dir)) {
     const full = path.join(dir, entry);
     const st = statSync(full);
     if (st.isDirectory()) out.push(...findJsonFiles(full));
-    else if (entry.endsWith(".json") || entry.endsWith(".c3proj")) out.push(full);
+    else if ((entry.endsWith(".json") || entry.endsWith(".c3proj")) && !JSONC_EXCEPTIONS.test(entry)) out.push(full);
   }
   return out;
 }
