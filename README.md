@@ -50,8 +50,10 @@ When the project changes (a C3 editor upgrade + re-export, or new coverage):
    save is what completes half-authored data (e.g. an effect declared in an object's `effectTypes`
    but never given its per-instance `effects` block — the exact defect that made the seed
    non-loadable until it was applied and re-saved in the editor).
-2. **Re-apply any curation a plain export can't express** — subtractive or degenerate/test-only
-   inputs (the current seed needs **none**; it is a clean editor export).
+2. **Re-apply any curation a plain export can't express** — subtractive/degenerate inputs, or repo
+   metadata the export carries from its origin. The current seed's only curation is the project
+   `name` (`construct3-sample`), renamed from the `construct3-chef-sample` the export inherited, so
+   the canonical fixture isn't named after one consumer.
 3. **Run the automated gate** — `npm install && node scripts/validate.mjs` (JSON well-formedness,
    `detectManifestDrift().inSync`, `validateForEditor` clean). CI runs this on every push/PR.
 4. **Cross-check addons** — run construct3-chef's `validate-addons --project-dir project` to confirm
