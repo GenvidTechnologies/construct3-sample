@@ -45,10 +45,13 @@ for the full rationale, and each consumer's own docs for its delta.
 
 When the project changes (a C3 editor upgrade + re-export, or new coverage):
 
-1. **Re-export / edit** the project in the C3 editor.
-2. **Re-apply curation** — any edit that a plain export doesn't round-trip (currently: the
-   `MyCompany_MyEffect` `usedAddons` entry, added at seed time so the applied effect is a
-   *declared* bundled addon and the project is faithful/loadable).
+1. **Edit + re-save the project *in the C3 editor*, then export the folder.** The canonical
+   `project/` is a straight editor round-trip — do **not** hand-author project JSON. A real editor
+   save is what completes half-authored data (e.g. an effect declared in an object's `effectTypes`
+   but never given its per-instance `effects` block — the exact defect that made the seed
+   non-loadable until it was applied and re-saved in the editor).
+2. **Re-apply any curation a plain export can't express** — subtractive or degenerate/test-only
+   inputs (the current seed needs **none**; it is a clean editor export).
 3. **Run the automated gate** — `npm install && node scripts/validate.mjs` (JSON well-formedness,
    `detectManifestDrift().inSync`, `validateForEditor` clean). CI runs this on every push/PR.
 4. **Cross-check addons** — run construct3-chef's `validate-addons --project-dir project` to confirm
@@ -69,7 +72,7 @@ Consumers pin the submodule to a **semver tag**:
 - **patch** — a curation fix that doesn't move the consumer contract.
 
 The C3 editor release the fixture was last saved/validated with (`savedWithRelease`, currently
-**r48703**) is recorded as provenance in the tag message and here — not in the tag name (a
+**r49500**) is recorded as provenance in the tag message and here — not in the tag name (a
 content-only fix has no new editor release to bump to).
 
 ## A note on validation

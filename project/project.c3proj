@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 48703,
+	"savedWithRelease": 49500,
 	"name": "construct3-chef-sample",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -87,18 +87,18 @@
 		},
 		{
 			"type": "effect",
-			"id": "burn",
-			"name": "Burn",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "effect",
 			"id": "MyCompany_MyEffect",
 			"name": "My custom effect",
 			"author": "Scirra",
 			"bundled": true,
 			"version": "1.0.0.0"
+		},
+		{
+			"type": "effect",
+			"id": "burn",
+			"name": "Burn",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "je2an0z14z6",

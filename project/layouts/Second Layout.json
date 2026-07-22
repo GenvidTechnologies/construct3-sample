@@ -244,6 +244,17 @@
 										"Burn": {
 											"isEnabled": true,
 											"parameters": {}
+										},
+										"MyCustomEffect": {
+											"isEnabled": true,
+											"parameters": {
+												"color": [
+													1,
+													0,
+													0,
+													1
+												]
+											}
 										}
 									},
 									"showing": true,
@@ -476,6 +487,19 @@
 											"properties": {}
 										}
 									},
+									"effects": {
+										"MyCustomEffect": {
+											"isEnabled": true,
+											"parameters": {
+												"color": [
+													0.6,
+													0.6,
+													0.6,
+													1
+												]
+											}
+										}
+									},
 									"showing": true,
 									"locked": false,
 									"world": {
@@ -497,12 +521,7 @@
 								}
 							],
 							"sid": 434309353023803,
-							"effectTypes": [
-								{
-									"effectId": "MyCompany_MyEffect",
-									"name": "My custom effect"
-								}
-							],
+							"effectTypes": [],
 							"isInitiallyVisible": true,
 							"isInitiallyInteractive": true,
 							"isHTMLElementsLayer": false,
@@ -566,7 +585,23 @@
 			],
 			"instances": [],
 			"sid": 123833139771255,
-			"effectTypes": [],
+			"effectTypes": [
+				{
+					"effectId": "MyCompany_MyEffect",
+					"name": "MyCustomEffect",
+					"instance": {
+						"isEnabled": false,
+						"parameters": {
+							"color": [
+								0.5019607843137255,
+								0,
+								0,
+								1
+							]
+						}
+					}
+				}
+			],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
@@ -598,12 +633,7 @@
 	],
 	"sid": 901279105542585,
 	"nonworld-instances": [],
-	"effectTypes": [
-		{
-			"effectId": "MyCompany_MyEffect",
-			"name": "My custom effect"
-		}
-	],
+	"effectTypes": [],
 	"width": 960,
 	"height": 1280,
 	"unboundedScrolling": false,

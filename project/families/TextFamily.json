@@ -13,7 +13,7 @@
 	"effectTypes": [
 		{
 			"effectId": "MyCompany_MyEffect",
-			"name": "My custom effect"
+			"name": "MyCustomEffect"
 		}
 	],
 	"members": [

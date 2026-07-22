@@ -205,6 +205,18 @@
 											[
 												"ssm",
 												true
+											],
+											[
+												"twpd",
+												true
+											],
+											[
+												"d",
+												true
+											],
+											[
+												"sz",
+												true
 											]
 										]
 									}
@@ -225,10 +237,10 @@
 									"z": true,
 									"w": true,
 									"h": true,
+									"d": true,
 									"a": true,
 									"o": false,
 									"v": false,
-									"d": true,
 									"sm": "normal"
 								}
 							}
@@ -239,10 +251,10 @@
 							"z": true,
 							"w": true,
 							"h": true,
+							"d": true,
 							"a": true,
 							"o": false,
 							"v": false,
-							"d": true,
 							"sm": "normal"
 						},
 						"preview": {
@@ -251,9 +263,11 @@
 							"transformZ": 0,
 							"transformW": 0,
 							"transformH": 0,
+							"transformD": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformSZ": 0,
 							"transformO": 0,
 							"previewSceneGraph": false
 						}
@@ -311,6 +325,19 @@
 							"properties": {}
 						}
 					},
+					"effects": {
+						"MyCustomEffect": {
+							"isEnabled": true,
+							"parameters": {
+								"color": [
+									1,
+									0,
+									0,
+									1
+								]
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 10,
 						"uid": 11,
@@ -320,10 +347,10 @@
 							"z": true,
 							"w": true,
 							"h": true,
+							"d": true,
 							"a": true,
 							"o": false,
 							"v": false,
-							"d": true,
 							"sm": "normal"
 						},
 						"preview": {
@@ -332,9 +359,11 @@
 							"transformZ": 0,
 							"transformW": 0,
 							"transformH": 0,
+							"transformD": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformSZ": 0,
 							"transformO": 0,
 							"previewSceneGraph": false
 						}

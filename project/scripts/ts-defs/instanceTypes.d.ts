@@ -16,6 +16,7 @@ declare namespace InstanceType {
 	}
 	class __Sprite2Effects extends Array<IEffectInstance> {
 		Burn: IEffectInstance;
+		MyCustomEffect: IEffectInstance;
 	}
 	class Sprite2 extends ISpriteInstance {
 		behaviors: __Sprite2Behaviors<this>;
@@ -35,24 +36,36 @@ declare namespace InstanceType {
 	class __TextBehaviors<InstType> {
 		Timer: ITimerBehaviorInstance<InstType>;
 	}
+	class __TextEffects extends Array<IEffectInstance> {
+		MyCustomEffect: IEffectInstance;
+	}
 	class Text extends ITextInstance {
 		behaviors: __TextBehaviors<this>;
+		effects: __TextEffects;
 	}
 	class TextInput extends ITextInputInstance {
 	}
 	class __Text2Behaviors<InstType> {
 		Timer: ITimerBehaviorInstance<InstType>;
 	}
+	class __Text2Effects extends Array<IEffectInstance> {
+		MyCustomEffect: IEffectInstance;
+	}
 	class Text2 extends ITextInstance {
 		behaviors: __Text2Behaviors<this>;
+		effects: __Text2Effects;
 	}
 	class NavButton extends IButtonInstance {
 	}
 	class __TextFamilyBehaviors<InstType> {
 		Timer: ITimerBehaviorInstance<InstType>;
 	}
+	class __TextFamilyEffects extends Array<IEffectInstance> {
+		MyCustomEffect: IEffectInstance;
+	}
 	class TextFamily extends ITextInstance {
 		behaviors: __TextFamilyBehaviors<this>;
+		effects: __TextFamilyEffects;
 	}
 	class LevelMaps extends ITiledBackgroundInstance {
 		instVars: {
