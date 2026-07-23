@@ -45,9 +45,28 @@
 								"comparison": 4,
 								"second-value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 450713348459828,
+							"parameters": {
+								"variable": "temp",
+								"comparison": 0,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 503974656149130,
+							"parameters": {
+								"variable": "temp",
+								"value": "1"
+							}
+						},
 						{
 							"id": "stop",
 							"objectClass": "Sprite2",
