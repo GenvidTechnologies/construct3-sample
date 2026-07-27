@@ -29,8 +29,42 @@ to survive:
 | Excluded | Why |
 |---|---|
 | a read-surface / `extracted/` rendering | that's a *consumer's* presentation layer (e.g. construct3-chef's DSL/index), versioned with that tool, not canonical C3 data |
-| addon `archive-sources/` + build scripts | a consumer's fixture-build tooling, not project content |
 | `*.uistate.json` | editor-local state; the C3 editor regenerates it on open and gitignores it on export |
+
+The bar is **provenance**, not file type: everything here originates from the C3 editor or the
+official Construct SDK, never hand-authored. That is why the bundled addons' sources *are* included
+(below) while a consumer's own rendering is not.
+
+## Bundled addon sources
+
+[`archive-sources/`](archive-sources/) holds the source tree of each addon the project bundles, and
+[`scripts/build-archives.mjs`](scripts/build-archives.mjs) packages one into a `.c3addon`. Both are
+**verbatim Construct SDK samples**, copied unmodified:
+
+| Addon | SDK source |
+|---|---|
+| `MyCompany_MyEffect` | `SDK/effect-sdk/sample-tint` |
+| `MyCompany_MyBehavior` | `SDK/behavior-sdk/`**`v2`**`/sample-behavior` — the **v2 (TypeScript)** variant; `v1` is the JavaScript one and differs |
+
+A `.c3addon` is **just a zip of the addon's files** — there is no official tool that builds one, and
+the editor stores the package you upload as-is. So the container is *not* normative: the two shipped
+packages were produced by different zip tools and legitimately differ in entry order, directory
+entries, timestamps and version-made-by. What defines an addon is its **content** — the entry-name
+set and each entry's bytes — and that is what [`scripts/validate.mjs`](scripts/validate.mjs) checks
+each package against its sources.
+
+Two rules when touching any of this:
+
+- **Never edit a copied SDK file.** `MyCompany_MyBehavior/addon.json` keeps its
+  `"$schema": "../behavior.addon.schema.json"`, which resolves inside the SDK tree and dangles
+  here. It is present byte-for-byte in the shipped package, so "fixing" it would break the gate.
+- **Zip entry names must be relative POSIX paths** — forward slashes, no `./` prefix, no leading
+  `/`. The editor rejects a package whose entries look like `./aces.json`, yet such a zip unzips
+  cleanly with any normal tool, so the failure is silent. `validate.mjs` asserts this on every
+  shipped package, hand-made ones included.
+
+`build-archives.mjs` does **not** overwrite `project/addons/**` by default — it builds into
+`build/`. Pass `--write` to regenerate a package in place.
 
 ## How it's consumed
 

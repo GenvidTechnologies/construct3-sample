@@ -5,3 +5,6 @@ package-lock.json
 # NOT part of the canonical fixture (C3 itself gitignores them on export), so a
 # manual editor-import validation pass must never commit them back in.
 **/*.uistate.json
+
+# Build output from scripts/build-archives.mjs (regenerable; not canonical bytes).
+build/
