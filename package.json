@@ -1,6 +1,6 @@
 {
   "name": "construct3-sample",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "description": "Canonical Construct 3 sample project — golden fixture consumed by GenvidTechnologies C3 tooling",
