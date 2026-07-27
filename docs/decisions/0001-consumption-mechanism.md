@@ -31,8 +31,11 @@ delta.**
 Concretely:
 
 - **The canonical bytes live here**, under `project/`, as a faithful C3 editor export.
-  This repo owns only genuine C3 on-disk data — never a consumer's rendering/read-surface
-  or fixture-build tooling.
+  The boundary is **provenance, not file type**: this repo owns artifacts originating from
+  the C3 editor or the official Construct SDK — never hand-authored data, and never a
+  *consumer's* own rendering/read-surface. Verbatim SDK addon sources and the script that
+  zips them into a `.c3addon` are therefore in scope; construct3-chef's `extracted/` DSL
+  rendering is not.
 - **Consumers add this repo as a submodule** pinned to a semver **tag** (not a moving
   branch), so a fixture change is an explicit, reviewable pin bump.
 - **Each consumer runs a prep script** that materializes a **gitignored** working fixture:
@@ -71,3 +74,16 @@ Concretely:
   editor-import checkpoint is part of the update protocol (see the repo README).
 - The fixture temporarily exists in two places — here and in construct3-chef's in-tree copy —
   until each consumer migrates to the submodule. Until then a manual sync discipline applies.
+- **Bundled addon sources came in-scope under the provenance reading**
+  ([construct3-chef#139](https://github.com/GenvidTechnologies/construct3-chef/issues/139)).
+  The original wording excluded "fixture-build tooling" outright, which read as a file-type
+  whitelist; the actual bar is where an artifact comes from. Both bundled addons are verbatim
+  Construct SDK samples, so `archive-sources/` and `scripts/build-archives.mjs` now live here
+  rather than in a consumer, and `scripts/validate.mjs` gained a check that every shipped
+  `.c3addon` still matches its sources — a guarantee no repo previously made. This also ends
+  the drift risk of a consumer keeping its own copy of the same sources.
+- A `.c3addon` is just a zip and no official tool builds one, so the **container is not
+  normative** — the shipped packages were made by different zip tools and differ in entry
+  order, directory entries and timestamps. The gate therefore compares **content** (entry-name
+  set + per-entry bytes), not bytes of the archive. See the README for the two standing rules
+  (never edit a copied SDK file; entry names must be relative POSIX paths).
