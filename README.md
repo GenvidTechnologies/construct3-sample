@@ -43,8 +43,17 @@ official Construct SDK, never hand-authored. That is why the bundled addons' sou
 
 | Addon | SDK source |
 |---|---|
-| `MyCompany_MyEffect` | `SDK/effect-sdk/sample-tint` |
-| `MyCompany_MyBehavior` | `SDK/behavior-sdk/`**`v2`**`/sample-behavior` — the **v2 (TypeScript)** variant; `v1` is the JavaScript one and differs |
+| `MyCompany_MyEffect` | `effect-sdk/sample-tint` |
+| `MyCompany_MyBehavior` | `behavior-sdk/sample-behavior`, the **TypeScript** form |
+
+The behavior sample's location moved between SDK drops: some ship it flat at
+`behavior-sdk/sample-behavior`, others split `behavior-sdk/v1/` (JavaScript) and `behavior-sdk/v2/`
+(TypeScript). Take the **TypeScript** one — it carries `.ts` sources plus `tsconfig.json` alongside
+the compiled `.js`, and is what's bundled here; the JavaScript variant shares only 3 of 25 files.
+
+The shipped `MyCompany_MyBehavior.c3addon` is byte-for-byte **Scirra's own prebuilt
+`behavior-sdk/sample-behavior.c3addon`** (all 25 entries identical), which is why its zip container
+carries Windows/NTFS metadata that no deterministic rebuild reproduces — see below.
 
 A `.c3addon` is **just a zip of the addon's files** — there is no official tool that builds one, and
 the editor stores the package you upload as-is. So the container is *not* normative: the two shipped
