@@ -1,3 +1,12 @@
+# Editor-local state the C3 editor regenerates when it opens the project. These
+# are genuinely not project content, so they are intentionally excluded from the
+# canonical fixture.
 *.uistate.json
 uistate
-ts-defs
+
+# NOTE: `ts-defs` deliberately does NOT belong here. The SDK `ts-defs/` tree is
+# declared fixture coverage (see README.md) and consumers such as construct3-chef
+# need those declaration files present to resolve TypeScript symbols. It was
+# previously listed above, which contradicted both the README and the 56 files
+# already tracked against the rule, and forced every regenerated declaration file
+# to be force-added. Do not re-add it.
