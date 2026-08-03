@@ -19,6 +19,37 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 719372879450562
+						}
+					],
+					"actions": [
+						{
+							"id": "map-function-default",
+							"objectClass": "Functions",
+							"sid": 715589657629666,
+							"parameters": {
+								"name": "\"mymap\"",
+								"function": "MyFunction"
+							}
+						},
+						{
+							"id": "map-function-default",
+							"objectClass": "Functions",
+							"sid": 591769943550613,
+							"parameters": {
+								"name": "\"normal\"",
+								"function": "MyFunction"
+							}
+						}
+					],
+					"sid": 804371239000122
+				},
+				{
 					"eventType": "variable",
 					"name": "temp",
 					"type": "number",
@@ -61,28 +92,24 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 503974656149130,
+							"sid": 409014053682075,
 							"parameters": {
 								"variable": "temp",
-								"value": "1"
+								"value": "Functions.CallMapped(\"mymap\", \"MyFunction\") + Functions.MyFunction"
 							}
 						},
 						{
-							"id": "stop",
-							"objectClass": "Sprite2",
-							"sid": 444777231675422,
-							"behaviorType": "MyCustomBehavior"
+							"callFunction": "MyAsyncFunction",
+							"sid": 862113030096535,
+							"parameters": [
+								"\"test\"",
+								"1"
+							]
 						},
 						{
-							"id": "start-timer",
-							"objectClass": "TextFamily",
-							"sid": 781413955177885,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "1.0",
-								"type": "once",
-								"tag": "\"test\""
-							}
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 549482180215368
 						},
 						{
 							"id": "go-to-layout",
@@ -94,6 +121,79 @@
 						}
 					],
 					"sid": 573288374737163
+				},
+				{
+					"functionName": "MyFunction",
+					"functionDescription": "A sample function",
+					"functionCategory": "sample",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 969686739532021,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 709436016193761
+				},
+				{
+					"functionName": "MyAsyncFunction",
+					"functionDescription": "A sample async function",
+					"functionCategory": "async sample",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "timer",
+							"type": "string",
+							"initialValue": "test",
+							"comment": "",
+							"sid": 315845367947998
+						},
+						{
+							"name": "duration",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 698949794864062
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Sprite2",
+							"sid": 169343119834577,
+							"behaviorType": "MyCustomBehavior"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "TextFamily",
+							"sid": 220932919502542,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "duration",
+								"type": "once",
+								"tag": "timer"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 872896832806153
+						}
+					],
+					"sid": 149644071357242
 				}
 			],
 			"sid": 100000000000022
