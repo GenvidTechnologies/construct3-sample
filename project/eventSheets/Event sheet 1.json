@@ -6,7 +6,7 @@
 			"name": "score",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "the score",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 100000000000020
@@ -90,41 +90,15 @@
 					],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 409014053682075,
-							"parameters": {
-								"variable": "temp",
-								"value": "Functions.CallMapped(\"mymap\", \"MyFunction\") + Functions.MyFunction"
-							}
-						},
-						{
-							"callFunction": "MyAsyncFunction",
-							"sid": 862113030096535,
-							"parameters": [
-								"\"test\"",
-								"1"
-							]
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 549482180215368
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 631897527420293,
-							"parameters": {
-								"layout": "Second Layout"
-							}
+							"customAction": "OnClickAction",
+							"objectClass": "NavButton",
+							"sid": 838950791575497
 						}
 					],
 					"sid": 573288374737163
 				},
 				{
 					"functionName": "MyFunction",
-					"functionDescription": "A sample function",
 					"functionCategory": "sample",
 					"functionReturnType": "number",
 					"functionCopyPicked": false,
@@ -194,6 +168,52 @@
 						}
 					],
 					"sid": 149644071357242
+				},
+				{
+					"aceType": "action",
+					"aceName": "OnClickAction",
+					"objectClass": "NavButton",
+					"functionDescription": "Action to be call on clicked",
+					"functionCategory": "custom",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 341445392905876,
+							"parameters": {
+								"variable": "temp",
+								"value": "Functions.CallMapped(\"mymap\", \"MyFunction\") + Functions.MyFunction"
+							}
+						},
+						{
+							"callFunction": "MyAsyncFunction",
+							"sid": 210161219965515,
+							"parameters": [
+								"\"test\"",
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 172943230222079
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 706607173911710,
+							"parameters": {
+								"layout": "Second Layout"
+							}
+						}
+					],
+					"sid": 757019400607615
 				}
 			],
 			"sid": 100000000000022
