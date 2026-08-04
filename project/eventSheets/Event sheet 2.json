@@ -9,12 +9,30 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "isActive",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 274712856729018
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "on-clicked",
 							"objectClass": "NavButton",
 							"sid": 295654966114362
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 223636741815997,
+							"parameters": {
+								"variable": "isActive"
+							}
 						}
 					],
 					"actions": [
