@@ -33,6 +33,16 @@
 							"parameters": {
 								"variable": "isActive"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 100000000000023,
+							"parameters": {
+								"variable": "score",
+								"comparison": 5,
+								"value": "10"
+							}
 						}
 					],
 					"actions": [
