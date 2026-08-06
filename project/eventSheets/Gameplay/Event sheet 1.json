@@ -54,6 +54,33 @@
 					"sid": 804371239000122
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 798420011261198,
+							"parameters": {
+								"first-value": "Sprite2.X",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 462819943741131,
+							"parameters": {
+								"variable": "score",
+								"value": "Sprite2.X"
+							}
+						}
+					],
+					"sid": 627117500832093
+				},
+				{
 					"eventType": "variable",
 					"name": "temp",
 					"type": "number",
