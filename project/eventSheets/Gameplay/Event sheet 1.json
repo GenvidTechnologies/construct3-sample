@@ -2,6 +2,10 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Event sheet 2"
+		},
+		{
 			"eventType": "variable",
 			"name": "score",
 			"type": "number",
