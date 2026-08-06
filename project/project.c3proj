@@ -157,18 +157,43 @@
 	},
 	"layouts": {
 		"items": [
-			"Main Layout",
-			"Second Layout",
 			"Templates Layout"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Main Layout"
+				],
+				"subfolders": [],
+				"name": "Gameplay"
+			},
+			{
+				"items": [
+					"Second Layout"
+				],
+				"subfolders": [],
+				"name": "UI"
+			}
+		]
 	},
 	"eventSheets": {
-		"items": [
-			"Event sheet 1",
-			"Event sheet 2"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Event sheet 1"
+				],
+				"subfolders": [],
+				"name": "Gameplay"
+			},
+			{
+				"items": [
+					"Event sheet 2"
+				],
+				"subfolders": [],
+				"name": "UI"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
