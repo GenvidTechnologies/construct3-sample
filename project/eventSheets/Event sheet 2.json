@@ -55,6 +55,78 @@
 						}
 					],
 					"sid": 873125372253996
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 457340412723551
+						}
+					],
+					"actions": [],
+					"sid": 902117897955465,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 917582097673370,
+									"parameters": {
+										"variable": "inner1",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "TextInput",
+									"sid": 106290981115075,
+									"parameters": {
+										"text": "str(inner1)"
+									}
+								}
+							],
+							"sid": 802418253791295
+						},
+						{
+							"eventType": "variable",
+							"name": "inner1",
+							"type": "number",
+							"initialValue": "2",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 463567326328426
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 941424105258197,
+									"parameters": {
+										"variable": "inner1",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 676592844013348,
+									"parameters": {
+										"text": "str(inner1)"
+									}
+								}
+							],
+							"sid": 173325987025130
+						}
+					]
 				}
 			],
 			"sid": 544395983790907
