@@ -21,6 +21,9 @@ to survive:
 - `.ts` scripts with an SDK `ts-defs/` tree;
 - `timelines/` with nested and **unnamed** subfolders (`transitions/`);
 - a `System.compare-two-values` condition;
+- a **local variable referenced before its own declaration**, with blocks straddling the
+  declaration on both sides — exercising C3's level-wide variable *visibility* and its
+  re-initialization at the declaration point (both blocks render `3`, not `3` then `4`);
 - a **bundled custom behavior** (`MyCompany_MyBehavior`) and a **bundled custom effect**
   (`MyCompany_MyEffect`), both declared in `project.c3proj` `usedAddons` and applied in the project.
 
@@ -117,7 +120,7 @@ Consumers pin the submodule to a **semver tag**:
 - **patch** — a curation fix that doesn't move the consumer contract.
 
 The C3 editor release the fixture was last saved/validated with (`savedWithRelease`, currently
-**r49500**) is recorded as provenance in the tag message and here — not in the tag name (a
+**r49502**) is recorded as provenance in the tag message and here — not in the tag name (a
 content-only fix has no new editor release to bump to).
 
 ## A note on validation
