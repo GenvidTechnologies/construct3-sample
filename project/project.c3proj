@@ -295,7 +295,80 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "sample.jpeg",
+					"type": "image/jpeg",
+					"sid": 882545406974548,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.m4a",
+					"type": "audio/mp4",
+					"sid": 212779396087498,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.gif",
+					"type": "image/gif",
+					"sid": 542941095423235,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.svg",
+					"type": "image/svg+xml",
+					"sid": 398259491854629,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "GoogleService-Info.plist",
+					"type": "application/octet-stream",
+					"sid": 171163999115772,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.jpg",
+					"type": "image/jpeg",
+					"sid": 873521270747239,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.mp4",
+					"type": "video/mp4",
+					"sid": 638186795498555,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.webp",
+					"type": "image/webp",
+					"sid": 908388383887835,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sample.mp3",
+					"type": "audio/mpeg",
+					"sid": 959671211354623,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
