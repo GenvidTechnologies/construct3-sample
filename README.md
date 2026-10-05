@@ -78,6 +78,23 @@ Two rules when touching any of this:
 `build-archives.mjs` does **not** overwrite `project/addons/**` by default — it builds into
 `build/`. Pass `--write` to regenerate a package in place.
 
+## Third-party assets
+
+The repository is MIT No Attribution, **except** for the files listed here, which keep their
+own licenses:
+
+| File(s) | License | Notice |
+|---|---|---|
+| `project/fonts/Saira.ttf`, `project/files/Saira.ttf` | SIL Open Font License 1.1 (Saira, © The Saira Project Authors) | [`licenses/Saira-OFL.txt`](licenses/Saira-OFL.txt) |
+
+License texts live in `licenses/`, **outside `project/`**. The editor registers every file it
+finds under `project/` as a project file, so a license file placed there would become a
+manifest entry.
+
+The media added for the file-type experiments was generated for this repo: the `sample.*` files
+under `project/files/` (#4) and the `tone_*.webm` clips (ffmpeg sine tones). Add any new
+third-party asset to this table, with its license text, before committing it.
+
 ## How it's consumed
 
 Each consumer adds this repo as a **git submodule pinned to a tag**, then a small prep script
