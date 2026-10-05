@@ -218,11 +218,29 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "tone_sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 116988391932401,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "tone_music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 952244745036022,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -230,7 +248,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Saira.ttf",
+					"type": "application/font-sfnt",
+					"sid": 337163318767235,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -364,6 +391,22 @@
 					"name": "sample.mp3",
 					"type": "audio/mpeg",
 					"sid": 959671211354623,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Saira.ttf",
+					"type": "application/font-sfnt",
+					"sid": 333645608848054,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tone_music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 208094494567466,
 					"file-info": {
 						"purpose": "none"
 					}
