@@ -92,7 +92,9 @@ finds under `project/` as a project file, so a license file placed there would b
 manifest entry.
 
 The media added for the file-type experiments was generated for this repo: the `sample.*` files
-under `project/files/` (#4) and the `tone_*.webm` clips (ffmpeg sine tones). Add any new
+under `project/files/` (#4), the `tone_*.webm` clips (ffmpeg sine tones), and the `clip*` videos
+under `project/videos/` (ffmpeg `testsrc` patterns: VP8 and VP9 `.webm`, H.264 `.mp4` and `.mov`,
+Theora `.ogv`). Add any new
 third-party asset to this table, with its license text, before committing it.
 
 ## How it's consumed
@@ -137,7 +139,7 @@ Consumers pin the submodule to a **semver tag**:
 - **patch** — a curation fix that doesn't move the consumer contract.
 
 The C3 editor release the fixture was last saved/validated with (`savedWithRelease`, currently
-**r49502**) is recorded as provenance in the tag message and here — not in the tag name (a
+**r50603**) is recorded as provenance in the tag message and here — not in the tag name (a
 content-only fix has no new editor release to bump to).
 
 ## A note on validation
