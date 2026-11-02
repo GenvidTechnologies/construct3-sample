@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 49502,
+	"savedWithRelease": 50603,
 	"name": "construct3-sample",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -244,7 +244,48 @@
 			"subfolders": []
 		},
 		"video": {
-			"items": [],
+			"items": [
+				{
+					"name": "clip_disk.webm",
+					"type": "video/webm",
+					"sid": 391394951799026,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "clip.mov",
+					"type": "video/quicktime",
+					"sid": 981937482953941,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "clip.mp4",
+					"type": "video/mp4",
+					"sid": 930839579134811,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "clip.ogv",
+					"type": "video/ogg",
+					"sid": 847791372401318,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "clip_import.webm",
+					"type": "video/webm",
+					"sid": 808796398799107,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"font": {
@@ -461,8 +502,8 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
+		"saveLLMContextFile": true,
 		"pixelRounding": false,
-		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
@@ -503,6 +544,7 @@
 		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"uidAllocationMode": "random",
+		"zAxisScale": "regular",
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"exportFileStructure": "folders",
