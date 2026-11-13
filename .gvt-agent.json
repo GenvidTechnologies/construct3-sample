@@ -1,0 +1,27 @@
+{
+  "project": {
+    "name": "construct3-sample"
+  },
+  "wiki": {
+    "wikiDir": "wiki"
+  },
+  "paths": {
+    "docs/TOC.md": "wiki/index.md",
+    "docs/issue-triage.md": "wiki/issue-triage.md"
+  },
+  "repo": {
+    "host": "github",
+    "default_branch": "main"
+  },
+  "bugTracker": {
+    "kind": "github",
+    "actionQuery": "gh issue list --repo GenvidTechnologies/construct3-sample --state open -L 200 --json number,title,labels,body,assignees,author,createdAt,milestone",
+    "comparisonQuery": "gh issue list --repo GenvidTechnologies/construct3-sample --state all -L 500 --json number,title,labels,state",
+    "readOne": "gh issue view {id} --repo GenvidTechnologies/construct3-sample --json number,title,body,labels,comments",
+    "commentsQuery": "gh issue list --repo GenvidTechnologies/construct3-sample --state open -L 200 --json number,comments",
+    "structureQuery": "gh issue list --repo GenvidTechnologies/construct3-sample --state open -L 200 --json number,parent,subIssuesSummary",
+    "refStateQuery": "gh api repos/{repo}/issues/{id} --jq '{number,state,state_reason,closed_at,pull_request:(.pull_request != null),sub_issues_summary}'",
+    "triagedLabel": "triaged",
+    "needsInfoLabel": "needs-info"
+  }
+}
