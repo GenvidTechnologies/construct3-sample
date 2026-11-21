@@ -11,7 +11,9 @@ npm install
 npm run validate
 ```
 
-`npm run validate` runs `scripts/validate.mjs`. It checks the JSON, the manifest against the disk, the event sheets against the editor rules, and each bundled `.c3addon` against its sources. A green run does not prove that the project loads in the Construct 3 editor. The manual import checkpoint in `README.md` ("Updating the fixture", step 5) stays required.
+Use `npm install`, not `npm ci`. `.gitignore` lists `package-lock.json`, so the repository has no lockfile, and `npm ci` stops with `EUSAGE`.
+
+`npm run validate` runs `scripts/validate.mjs`. `commands.validate` in `.gvt-agent.json` names the same command. It checks the JSON, the manifest against the disk, the event sheets against the editor rules, and each bundled `.c3addon` against its sources. A green run does not prove that the project loads in the Construct 3 editor. The manual import checkpoint in `README.md` ("Updating the fixture", step 5) stays required.
 
 A change that touches only `wiki/`, `CLAUDE.md`, `README.md` or `.gvt-agent.json` does not change what the gate checks.
 
@@ -20,6 +22,12 @@ A change that touches only `wiki/`, `CLAUDE.md`, `README.md` or `.gvt-agent.json
 The wiki (`wiki/`, `wiki.wikiDir` in `.gvt-agent.json`) is the documentation home. `wiki/index.md` lists the pages, `wiki/log.md` records changes to the page set, and `wiki/schema.md` holds the rules.
 
 The decision records are wiki pages in `wiki/decisions/`, listed in `wiki/decisions/index.md`. `paths['docs/decisions/']` in `.gvt-agent.json` points there, so `/gvt-dev:create-adr` writes new records in the wiki. The repository has no `docs/` folder.
+
+A decision record opens with frontmatter: `type: decision-context`, a `title` and a `description` (both the record's title), `tags: [decisions]` and `status`. Its body heading `# NNNN. Title` keeps the number. Each new record also gets a line in `wiki/decisions/index.md`.
+
+Only the bundle-root index, `wiki/index.md`, carries frontmatter (`okf_version`). A subfolder index such as `wiki/decisions/index.md` has none.
+
+`audit-conventions` does not check links or orphans inside `wiki/`. The `maintain-wiki` lint checks them: run `/gvt-wiki:maintain-wiki lint`. Its script, `wiki-lint.mjs`, always exits 0, so read its findings. The link from ADR 0001 to `../../scripts/validate.mjs` leaves the wiki on purpose, and the lint reports it as an advisory note.
 
 ## Issue triage
 
