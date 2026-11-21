@@ -15,6 +15,12 @@ before. If a past entry itself needs correcting, add a new entry that says
 so; never edit or remove the old one in place. See [schema.md](schema.md) for
 the full maintenance schema.
 
+## 2026-11-21
+
+* **Creation**: decisions/0001-consumption-mechanism.md, moved from `docs/decisions/` with OKF frontmatter added; the body is unchanged (#8).
+* **Creation**: decisions/index.md, the list of decision records, linked from index.md (#8).
+* **Update**: index.md gains a Decisions section that links decisions/index.md (#8).
+
 ## 2026-11-13
 
 * **Creation**: schema.md, index.md and log.md, scaffolded from the gvt-wiki `maintain-wiki` templates.

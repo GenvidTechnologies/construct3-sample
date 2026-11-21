@@ -1,3 +1,10 @@
+---
+type: decision-context
+title: 'Canonical C3 fixture: standalone repo consumed as a submodule'
+description: 'Canonical C3 fixture: standalone repo consumed as a submodule'
+tags: [decisions]
+status: stable
+---
 # 0001. Canonical C3 fixture: standalone repo consumed as a submodule
 
 - **Status:** Accepted

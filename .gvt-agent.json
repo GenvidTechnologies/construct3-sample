@@ -2,11 +2,15 @@
   "project": {
     "name": "construct3-sample"
   },
+  "commands": {
+    "validate": "npm run validate"
+  },
   "wiki": {
     "wikiDir": "wiki"
   },
   "paths": {
     "docs/TOC.md": "wiki/index.md",
+    "docs/decisions/": "wiki/decisions/",
     "docs/issue-triage.md": "wiki/issue-triage.md"
   },
   "repo": {

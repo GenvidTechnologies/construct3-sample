@@ -19,7 +19,7 @@ A change that touches only `wiki/`, `CLAUDE.md`, `README.md` or `.gvt-agent.json
 
 The wiki (`wiki/`, `wiki.wikiDir` in `.gvt-agent.json`) is the documentation home. `wiki/index.md` lists the pages, `wiki/log.md` records changes to the page set, and `wiki/schema.md` holds the rules.
 
-`docs/decisions/` still holds ADR 0001. Moving it into the wiki is #8.
+The decision records are wiki pages in `wiki/decisions/`, listed in `wiki/decisions/index.md`. `paths['docs/decisions/']` in `.gvt-agent.json` points there, so `/gvt-dev:create-adr` writes new records in the wiki. The repository has no `docs/` folder.
 
 ## Issue triage
 

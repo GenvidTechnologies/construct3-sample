@@ -14,6 +14,10 @@ rules.
 
 * [Wiki Maintenance Schema](schema.md) - The maintenance rules for this wiki — page format, create-vs-update lifecycle, raw/ immutability, staleness policy and the verb contract.
 
+## Decisions
+
+* [Decision Records](decisions/index.md) - The architecture decision records, in MADR-lite format.
+
 ## Process
 
 * [Issue Triage Conventions](issue-triage.md) - Labels, priorities, required fields and mutation recipes that /gvt-dev:triage-issues uses on this repository's issues.
