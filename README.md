@@ -103,7 +103,7 @@ Each consumer adds this repo as a **git submodule pinned to a tag**, then a smal
 **materializes a working fixture** its tests run against: the canonical `project/` bytes plus the
 consumer's own local delta (an additive overlay + a strip-list for anything it needs removed).
 The materialized fixture is gitignored — the submodule stays the single source of the canonical
-bytes. See [`docs/decisions/0001-consumption-mechanism.md`](docs/decisions/0001-consumption-mechanism.md)
+bytes. See [`wiki/decisions/0001-consumption-mechanism.md`](wiki/decisions/0001-consumption-mechanism.md)
 for the full rationale, and each consumer's own docs for its delta.
 
 ## Updating the fixture
